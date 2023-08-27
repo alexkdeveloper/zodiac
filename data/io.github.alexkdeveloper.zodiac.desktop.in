@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Zodiac
+Comment=A simple program for plotting horoscopes
+Exec=zodiac
+Icon=io.github.alexkdeveloper.zodiac
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

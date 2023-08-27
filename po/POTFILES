@@ -1,0 +1,6 @@
+data/io.github.alexkdeveloper.zodiac.desktop.in
+data/io.github.alexkdeveloper.zodiac.appdata.xml.in
+data/io.github.alexkdeveloper.zodiac.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

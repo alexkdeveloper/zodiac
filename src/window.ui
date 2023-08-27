@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="ZodiacWindow" parent="AdwApplicationWindow">
+    <property name="default-width">600</property>
+    <property name="default-height">300</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar">
+          <property name="title-widget">
+              <object class="AdwWindowTitle">
+                <property name="title" translatable="yes">Zodiac</property>
+              </object>
+            </property>
+            <child>
+              <object class="GtkButton" id="back_button">
+                <property name="child">
+                  <object class="AdwButtonContent">
+                    <property name="icon-name">go-previous-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Back</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="drop_down">
+              <property name="model">
+                <object class="GtkStringList">
+                  <items>
+                    <item translatable="yes">For one</item>
+                    <item translatable="yes">For two</item>
+                  </items>
+                </object>
+              </property>
+             </object>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkButton" id="next_button">
+                <property name="child">
+                  <object class="AdwButtonContent">
+                   <property name="icon-name">go-next-symbolic</property>
+                 </object>
+               </property>
+              </object>
+            </child>
+             <child type="end">
+              <object class="GtkButton" id="button">
+              <property name="label">SHOW</property>
+              </object>
+            </child>
+          </object>
+        </child>
+         <child>
+        <object class="AdwToastOverlay" id="overlay">
+        <child>
+          <object class="GtkStack" id="stack">
+            <property name="transition-duration">600</property>
+            <property name="transition-type">slide-left-right</property>
+            <child>
+              <object class="AdwClamp" id="data_page">
+                <property name="tightening-threshold">100</property>
+                <property name="valign">center</property>
+                <property name="margin-top">36</property>
+                <property name="margin-bottom">36</property>
+            <child>
+              <object class="GtkListBox">
+                 <child>
+                      <object class="AdwEntryRow" id="entry_name">
+                        <property name="title" translatable="yes">Name</property>
+                        <child>
+                          <object class="GtkButton" id="clear_name">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_day">
+                        <property name="title" translatable="yes">Day of births</property>
+                        <child>
+                          <object class="GtkButton" id="clear_day">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                    <object class="AdwComboRow" id="combo">
+                      <property name="selectable">False</property>
+                      <property name="title" translatable="yes">Month of births</property>
+                      <property name="model">
+                      <object class="GtkStringList">
+                         <items>
+                           <item translatable="yes">January</item>
+                           <item translatable="yes">February</item>
+                           <item translatable="yes">March</item>
+                           <item translatable="yes">April</item>
+                           <item translatable="yes">May</item>
+                           <item translatable="yes">June</item>
+                           <item translatable="yes">July</item>
+                           <item translatable="yes">August</item>
+                           <item translatable="yes">September</item>
+                           <item translatable="yes">October</item>
+                           <item translatable="yes">November</item>
+                           <item translatable="yes">December</item>
+                         </items>
+                      </object>
+                    </property>
+                   </object>
+               </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_year">
+                        <property name="title" translatable="yes">Year of births</property>
+                        <child>
+                          <object class="GtkButton" id="clear_year">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_hours">
+                        <property name="title" translatable="yes">Time of birth(hours)</property>
+                        <child>
+                          <object class="GtkButton" id="clear_hour">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_minutes">
+                        <property name="title" translatable="yes">Time of birth(minutes)</property>
+                        <child>
+                          <object class="GtkButton" id="clear_minutes">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                   <child>
+                      <object class="AdwEntryRow" id="entry_place">
+                        <property name="title" translatable="yes">Place of birth</property>
+                        <child>
+                          <object class="GtkButton" id="clear_place">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                   <child>
+                      <object class="AdwEntryRow" id="entry_save">
+                        <property name="title" translatable="yes">File save location</property>
+                        <child>
+                          <object class="GtkButton" id="button_save">
+                            <property name="icon-name">folder-open-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="clear_save">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  <style>
+                    <class name="boxed-list"/>
+                  </style>
+                </object>
+              </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwClamp" id="data_page2">
+                <property name="tightening-threshold">100</property>
+                <property name="valign">center</property>
+                <property name="margin-top">36</property>
+                <property name="margin-bottom">36</property>
+            <child>
+              <object class="GtkListBox">
+                 <child>
+                      <object class="AdwEntryRow" id="entry_name2">
+                        <property name="title" translatable="yes">Name</property>
+                        <child>
+                          <object class="GtkButton" id="clear_name2">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_day2">
+                        <property name="title" translatable="yes">Day of births</property>
+                        <child>
+                          <object class="GtkButton" id="clear_day2">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                    <object class="AdwComboRow" id="combo2">
+                      <property name="selectable">False</property>
+                      <property name="title" translatable="yes">Month of births</property>
+                      <property name="model">
+                      <object class="GtkStringList">
+                         <items>
+                           <item translatable="yes">January</item>
+                           <item translatable="yes">February</item>
+                           <item translatable="yes">March</item>
+                           <item translatable="yes">April</item>
+                           <item translatable="yes">May</item>
+                           <item translatable="yes">June</item>
+                           <item translatable="yes">July</item>
+                           <item translatable="yes">August</item>
+                           <item translatable="yes">September</item>
+                           <item translatable="yes">October</item>
+                           <item translatable="yes">November</item>
+                           <item translatable="yes">December</item>
+                         </items>
+                      </object>
+                    </property>
+                   </object>
+               </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_year2">
+                        <property name="title" translatable="yes">Year of births</property>
+                        <child>
+                          <object class="GtkButton" id="clear_year2">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_hours2">
+                        <property name="title" translatable="yes">Time of birth(hours)</property>
+                        <child>
+                          <object class="GtkButton" id="clear_hour2">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="entry_minutes2">
+                        <property name="title" translatable="yes">Time of birth(minutes)</property>
+                        <child>
+                          <object class="GtkButton" id="clear_minutes2">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                   <child>
+                      <object class="AdwEntryRow" id="entry_place2">
+                        <property name="title" translatable="yes">Place of birth</property>
+                        <child>
+                          <object class="GtkButton" id="clear_place2">
+                            <property name="visible">False</property>
+                            <property name="icon-name">edit-clear-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="destructive-action"/>
+                              <class name="circular"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  <style>
+                    <class name="boxed-list"/>
+                  </style>
+                </object>
+              </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="result_page">
+                <property name="vexpand">True</property>
+                <child>
+                  <object class="GtkViewport">
+                    <child>
+                      <object class="GtkImage" id="image">
+                        <property name="vexpand">True</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+            </object>
+        </child>
+      </object>
+    </child>
+   </object>
+ </child>
+</object>
+</child>
+</template>
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Zodiac</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>
