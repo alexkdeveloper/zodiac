@@ -34,6 +34,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
     next_button = Gtk.Template.Child()
     stack = Gtk.Template.Child()
     image = Gtk.Template.Child()
+    overlay = Gtk.Template.Child()
     result_page = Gtk.Template.Child()
     data_page = Gtk.Template.Child()
     entry_name = Gtk.Template.Child()
@@ -89,25 +90,26 @@ class ZodiacWindow(Adw.ApplicationWindow):
            self.next_button.set_visible(True)
 
     def on_button_clicked(self, widget):
-        if self.drop_down.get_selected() == 0:
-           name = self.entry_name.get_text()
-           day = int(self.entry_day.get_text())
-           month = self.combo.get_selected()+1
-           year = int(self.entry_year.get_text())
-           hours = int(self.entry_hours.get_text())
-           minutes = int(self.entry_minutes.get_text())
-           place = self.entry_place.get_text()
+        if len(self.entry_name.get_text().strip()) == 0 or len(self.entry_day.get_text().strip()) == 0 or len(self.entry_year.get_text().strip()) == 0 or len(self.entry_hours.get_text().strip()) == 0 or len(self.entry_minutes.get_text().strip()) == 0 or len(self.entry_place.get_text().strip()) == 0 or len(self.entry_save.get_text().strip()) == 0:
+           self.set_toast("Fill in all the fields!")
+           return
 
+        name = self.entry_name.get_text()
+        day = int(self.entry_day.get_text())
+        month = self.combo.get_selected()+1
+        year = int(self.entry_year.get_text())
+        hours = int(self.entry_hours.get_text())
+        minutes = int(self.entry_minutes.get_text())
+        place = self.entry_place.get_text()
+
+        if self.drop_down.get_selected() == 0:
            subject = AstrologicalSubject(name, year, month, day, hours, minutes, place)
            chart = KerykeionChartSVG(subject, chart_type="Natal")
         else:
-           name = self.entry_name.get_text()
-           day = int(self.entry_day.get_text())
-           month = self.combo.get_selected()+1
-           year = int(self.entry_year.get_text())
-           hours = int(self.entry_hours.get_text())
-           minutes = int(self.entry_minutes.get_text())
-           place = self.entry_place.get_text()
+           if len(self.entry_name2.get_text().strip()) == 0 or len(self.entry_day2.get_text().strip()) == 0 or len(self.entry_year2.get_text().strip()) == 0 or len(self.entry_hours2.get_text().strip()) == 0 or len(self.entry_minutes2.get_text().strip()) == 0 or len(self.entry_place2.get_text().strip()) == 0:
+              self.set_toast("Fill in all the fields!")
+              return
+
            name2 = self.entry_name2.get_text()
            day2 = int(self.entry_day2.get_text())
            month2 = self.combo2.get_selected()+1
@@ -126,7 +128,15 @@ class ZodiacWindow(Adw.ApplicationWindow):
         chart.set_output_directory(Path(path))
         chart.makeSVG()
 
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file(path+"/"+name+chart.chart_type+"Chart.svg")
+        path_to_file = path+"/"+name+chart.chart_type+"Chart.svg"
+
+        if Path(path_to_file).exists():
+            self.set_toast("File saved successfully")
+        else:
+            self.set_toast("Failed to save file")
+            return
+
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file(path_to_file)
         self.image.set_from_pixbuf(pixbuf)
 
         self.stack.set_visible_child(self.result_page)
@@ -162,3 +172,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.next_button.set_visible(False)
         self.drop_down.set_visible(False)
         self.button.set_visible(True)
+
+    def set_toast(self, str):
+        toast = Adw.Toast(title=str)
+        self.overlay.add_toast(toast)
