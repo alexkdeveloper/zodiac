@@ -76,33 +76,11 @@
                  <child>
                       <object class="AdwEntryRow" id="entry_name">
                         <property name="title" translatable="yes">Name</property>
-                        <child>
-                          <object class="GtkButton" id="clear_name">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
                       <object class="AdwEntryRow" id="entry_day">
                         <property name="title" translatable="yes">Day of births</property>
-                        <child>
-                          <object class="GtkButton" id="clear_day">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
@@ -132,65 +110,21 @@
                     <child>
                       <object class="AdwEntryRow" id="entry_year">
                         <property name="title" translatable="yes">Year of births</property>
-                        <child>
-                          <object class="GtkButton" id="clear_year">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
                       <object class="AdwEntryRow" id="entry_hours">
                         <property name="title" translatable="yes">Time of birth(hours)</property>
-                        <child>
-                          <object class="GtkButton" id="clear_hour">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
                       <object class="AdwEntryRow" id="entry_minutes">
                         <property name="title" translatable="yes">Time of birth(minutes)</property>
-                        <child>
-                          <object class="GtkButton" id="clear_minutes">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                    <child>
                       <object class="AdwEntryRow" id="entry_place">
                         <property name="title" translatable="yes">Place of birth</property>
-                        <child>
-                          <object class="GtkButton" id="clear_place">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                    <child>
@@ -201,17 +135,6 @@
                             <property name="icon-name">folder-open-symbolic</property>
                             <property name="valign">center</property>
                             <style>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="clear_save">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
                               <class name="circular"/>
                             </style>
                           </object>
@@ -236,33 +159,11 @@
                  <child>
                       <object class="AdwEntryRow" id="entry_name2">
                         <property name="title" translatable="yes">Name</property>
-                        <child>
-                          <object class="GtkButton" id="clear_name2">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
                       <object class="AdwEntryRow" id="entry_day2">
                         <property name="title" translatable="yes">Day of births</property>
-                        <child>
-                          <object class="GtkButton" id="clear_day2">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
@@ -292,65 +193,21 @@
                     <child>
                       <object class="AdwEntryRow" id="entry_year2">
                         <property name="title" translatable="yes">Year of births</property>
-                        <child>
-                          <object class="GtkButton" id="clear_year2">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
                       <object class="AdwEntryRow" id="entry_hours2">
                         <property name="title" translatable="yes">Time of birth(hours)</property>
-                        <child>
-                          <object class="GtkButton" id="clear_hour2">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                     <child>
                       <object class="AdwEntryRow" id="entry_minutes2">
                         <property name="title" translatable="yes">Time of birth(minutes)</property>
-                        <child>
-                          <object class="GtkButton" id="clear_minutes2">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                    <child>
                       <object class="AdwEntryRow" id="entry_place2">
                         <property name="title" translatable="yes">Place of birth</property>
-                        <child>
-                          <object class="GtkButton" id="clear_place2">
-                            <property name="visible">False</property>
-                            <property name="icon-name">edit-clear-symbolic</property>
-                            <property name="valign">center</property>
-                            <style>
-                              <class name="destructive-action"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
                       </object>
                     </child>
                   <style>
