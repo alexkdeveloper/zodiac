@@ -46,12 +46,13 @@
                 <property name="child">
                   <object class="AdwButtonContent">
                    <property name="icon-name">go-next-symbolic</property>
+                   <property name="tooltip-text" translatable="yes">Next</property>
                  </object>
                </property>
               </object>
             </child>
              <child type="end">
-              <object class="GtkButton" id="button">
+              <object class="GtkButton" id="show_button">
               <property name="label">SHOW</property>
               </object>
             </child>
@@ -129,7 +130,7 @@
                       <object class="AdwEntryRow" id="entry_save">
                         <property name="title" translatable="yes">File save location</property>
                         <child>
-                          <object class="GtkButton" id="button_save">
+                          <object class="GtkButton" id="save_button">
                             <property name="icon-name">folder-open-symbolic</property>
                             <property name="valign">center</property>
                             <style>

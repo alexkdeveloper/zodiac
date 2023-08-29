@@ -30,9 +30,10 @@ class ZodiacWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'ZodiacWindow'
 
     drop_down = Gtk.Template.Child()
-    button = Gtk.Template.Child()
+    show_button = Gtk.Template.Child()
     back_button = Gtk.Template.Child()
     next_button = Gtk.Template.Child()
+    save_button = Gtk.Template.Child()
     stack = Gtk.Template.Child()
     image = Gtk.Template.Child()
     overlay = Gtk.Template.Child()
@@ -45,7 +46,6 @@ class ZodiacWindow(Adw.ApplicationWindow):
     entry_minutes = Gtk.Template.Child()
     entry_place = Gtk.Template.Child()
     entry_save = Gtk.Template.Child()
-    button_save = Gtk.Template.Child()
     combo = Gtk.Template.Child()
     data_page2 = Gtk.Template.Child()
     entry_name2 = Gtk.Template.Child()
@@ -59,11 +59,11 @@ class ZodiacWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        self.button.connect("clicked", self.on_button_clicked)
+        self.show_button.connect("clicked", self.on_show_clicked)
         self.back_button.connect("clicked", self.on_back_clicked)
         self.next_button.connect("clicked", self.on_next_clicked)
-        self.button_save.connect("clicked", self.show_open_dialog)
-        self.drop_down.connect("notify::selected-item", self.on_selected_item)
+        self.save_button.connect("clicked", self.show_open_dialog)
+        self.drop_down.connect("notify::selected-item", self.item_selected)
 
         self.back_button.set_visible(False)
         self.next_button.set_visible(False)
@@ -89,15 +89,15 @@ class ZodiacWindow(Adw.ApplicationWindow):
         except GLib.Error as error:
             print(f"Error select folder: {error.message}")
 
-    def on_selected_item(self, widget, _):
+    def item_selected(self, widget, _):
         if self.drop_down.get_selected() == 0:
-           self.button.set_visible(True)
+           self.show_button.set_visible(True)
            self.next_button.set_visible(False)
         else:
-           self.button.set_visible(False)
+           self.show_button.set_visible(False)
            self.next_button.set_visible(True)
 
-    def on_button_clicked(self, widget):
+    def on_show_clicked(self, widget):
         if len(self.entry_name.get_text().strip()) == 0 or len(self.entry_day.get_text().strip()) == 0 or len(self.entry_year.get_text().strip()) == 0 or len(self.entry_hours.get_text().strip()) == 0 or len(self.entry_minutes.get_text().strip()) == 0 or len(self.entry_place.get_text().strip()) == 0 or len(self.entry_save.get_text().strip()) == 0:
            self.set_toast("Fill in all the fields!")
            return
@@ -151,7 +151,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.back_button.set_visible(True)
         self.drop_down.set_visible(False)
         self.next_button.set_visible(False)
-        self.button.set_visible(False)
+        self.show_button.set_visible(False)
 
     def on_back_clicked(self, widget):
         if self.drop_down.get_selected() == 0:
@@ -159,27 +159,27 @@ class ZodiacWindow(Adw.ApplicationWindow):
            self.back_button.set_visible(False)
            self.next_button.set_visible(False)
            self.drop_down.set_visible(True)
-           self.button.set_visible(True)
+           self.show_button.set_visible(True)
         else:
            if self.stack.get_visible_child() == self.result_page:
               self.stack.set_visible_child(self.data_page2)
               self.back_button.set_visible(True)
               self.next_button.set_visible(False)
               self.drop_down.set_visible(False)
-              self.button.set_visible(True)
+              self.show_button.set_visible(True)
            else:
               self.stack.set_visible_child(self.data_page)
               self.back_button.set_visible(False)
               self.next_button.set_visible(True)
               self.drop_down.set_visible(True)
-              self.button.set_visible(False)
+              self.show_button.set_visible(False)
 
     def on_next_clicked(self, widget):
         self.stack.set_visible_child(self.data_page2)
         self.back_button.set_visible(True)
         self.next_button.set_visible(False)
         self.drop_down.set_visible(False)
-        self.button.set_visible(True)
+        self.show_button.set_visible(True)
 
     def set_toast(self, str):
         toast = Adw.Toast(title=str)
