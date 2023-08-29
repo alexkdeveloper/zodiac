@@ -19,6 +19,7 @@
 
 from gi.repository import Adw
 from gi.repository import Gtk
+from gi.repository import Gio
 from gi.repository import GdkPixbuf
 from pathlib import Path
 from kerykeion import AstrologicalSubject, KerykeionChartSVG
@@ -66,6 +67,13 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
         self.back_button.set_visible(False)
         self.next_button.set_visible(False)
+
+        self.settings = Gio.Settings(schema_id="io.github.alexkdeveloper.zodiac")
+
+        self.settings.bind("width", self, "default-width", Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("height", self, "default-height", Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("is-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT)
 
         self.open_dialog = Gtk.FileDialog.new()
         self.open_dialog.set_title("Select a Folder")
