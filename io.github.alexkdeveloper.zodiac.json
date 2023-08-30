@@ -203,8 +203,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "file:///home/alex/Projects"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }
