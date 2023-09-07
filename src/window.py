@@ -23,7 +23,7 @@ from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import GdkPixbuf
 from pathlib import Path
-from kerykeion import AstrologicalSubject, KerykeionChartSVG
+from kerykeion import AstrologicalSubject, KerykeionChartSVG, Report
 
 
 @Gtk.Template(resource_path='/io/github/alexkdeveloper/zodiac/window.ui')
@@ -36,7 +36,8 @@ class ZodiacWindow(Adw.ApplicationWindow):
     next_button = Gtk.Template.Child()
     save_button = Gtk.Template.Child()
     stack = Gtk.Template.Child()
-    image = Gtk.Template.Child()
+    svg = Gtk.Template.Child()
+    text = Gtk.Template.Child()
     overlay = Gtk.Template.Child()
     result_page = Gtk.Template.Child()
     data_page = Gtk.Template.Child()
@@ -146,7 +147,17 @@ class ZodiacWindow(Adw.ApplicationWindow):
             return
 
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(path_to_file)
-        self.image.set_from_pixbuf(pixbuf)
+        self.svg.set_from_pixbuf(pixbuf)
+
+        report = Report(subject)
+        report_text = report.get_full_report()
+
+        self.text.set_text(report_text)
+
+        path_to_report = path+"/"+name+"Report.txt"
+
+        with open(path_to_report, 'w') as f:
+             f.write(report_text)
 
         self.stack.set_visible_child(self.result_page)
         self.back_button.set_visible(True)
