@@ -53,7 +53,7 @@
             </child>
              <child type="end">
               <object class="GtkButton" id="show_button">
-              <property name="label">SHOW</property>
+              <property name="label" translatable="yes">SHOW</property>
               </object>
             </child>
           </object>

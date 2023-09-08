@@ -78,7 +78,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.settings.bind("is-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT)
 
         self.open_dialog = Gtk.FileDialog.new()
-        self.open_dialog.set_title("Select a Folder")
+        self.open_dialog.set_title(_("Select a Folder"))
 
     def show_open_dialog(self, button):
         self.open_dialog.select_folder(self, None, self.open_dialog_open_callback)
@@ -101,7 +101,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
     def on_show_clicked(self, widget):
         if len(self.entry_name.get_text().strip()) == 0 or len(self.entry_day.get_text().strip()) == 0 or len(self.entry_year.get_text().strip()) == 0 or len(self.entry_hours.get_text().strip()) == 0 or len(self.entry_minutes.get_text().strip()) == 0 or len(self.entry_place.get_text().strip()) == 0 or len(self.entry_save.get_text().strip()) == 0:
-           self.set_toast("Fill in all the fields!")
+           self.set_toast(_("Fill in all the fields!"))
            return
 
         name = self.entry_name.get_text()
@@ -117,7 +117,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
            chart = KerykeionChartSVG(subject, chart_type="Natal")
         else:
            if len(self.entry_name2.get_text().strip()) == 0 or len(self.entry_day2.get_text().strip()) == 0 or len(self.entry_year2.get_text().strip()) == 0 or len(self.entry_hours2.get_text().strip()) == 0 or len(self.entry_minutes2.get_text().strip()) == 0 or len(self.entry_place2.get_text().strip()) == 0:
-              self.set_toast("Fill in all the fields!")
+              self.set_toast(_("Fill in all the fields!"))
               return
 
            name2 = self.entry_name2.get_text()
@@ -141,9 +141,9 @@ class ZodiacWindow(Adw.ApplicationWindow):
         path_to_file = path+"/"+name+chart.chart_type+"Chart.svg"
 
         if Path(path_to_file).exists():
-            self.set_toast("File saved successfully")
+            self.set_toast(_("File saved successfully"))
         else:
-            self.set_toast("Failed to save file")
+            self.set_toast(_("Failed to save file"))
             return
 
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(path_to_file)
