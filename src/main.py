@@ -57,7 +57,7 @@ class ZodiacApplication(Adw.Application):
                                 version='1.0.0',
                                 developers=['Alex Kryuchkov'],
                                 translator_credits=translator_credits,
-                                website="https://github.com/alexkdeveloper/zodiac",
+                                website='https://github.com/alexkdeveloper/zodiac',
                                 copyright='© 2023 Alex Kryuchkov',
                                 license_type=Gtk.License.GPL_3_0)
         about.present()
