@@ -35,7 +35,6 @@ class ZodiacApplication(Adw.Application):
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
         self.create_action('about', self.on_about_action)
-        self.create_action('preferences', self.on_preferences_action)
 
     def do_activate(self):
         """Called when the application is activated.
@@ -58,10 +57,6 @@ class ZodiacApplication(Adw.Application):
                                 developers=['Alex Kryuchkov'],
                                 copyright='© 2023 Alex Kryuchkov')
         about.present()
-
-    def on_preferences_action(self, widget, _):
-        """Callback for the app.preferences action."""
-        print('app.preferences action activated')
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.
