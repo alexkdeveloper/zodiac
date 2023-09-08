@@ -26,6 +26,7 @@ gi.require_version('Adw', '1')
 from gi.repository import Gtk, Gio, Adw
 from .window import ZodiacWindow
 
+translator_credits = _("translator-credits")
 
 class ZodiacApplication(Adw.Application):
     """The main application singleton class."""
@@ -55,7 +56,10 @@ class ZodiacApplication(Adw.Application):
                                 developer_name='Alex Kryuchkov',
                                 version='1.0.0',
                                 developers=['Alex Kryuchkov'],
-                                copyright='© 2023 Alex Kryuchkov')
+                                translator_credits = translator_credits,
+                                website = "https://github.com/alexkdeveloper/zodiac",
+                                copyright='© 2023 Alex Kryuchkov',
+                                license_type = Gtk.License.GPL_3_0)
         about.present()
 
     def create_action(self, name, callback, shortcuts=None):
