@@ -56,10 +56,10 @@ class ZodiacApplication(Adw.Application):
                                 developer_name='Alex Kryuchkov',
                                 version='1.0.0',
                                 developers=['Alex Kryuchkov'],
-                                translator_credits = translator_credits,
-                                website = "https://github.com/alexkdeveloper/zodiac",
+                                translator_credits=translator_credits,
+                                website="https://github.com/alexkdeveloper/zodiac",
                                 copyright='© 2023 Alex Kryuchkov',
-                                license_type = Gtk.License.GPL_3_0)
+                                license_type=Gtk.License.GPL_3_0)
         about.present()
 
     def create_action(self, name, callback, shortcuts=None):
