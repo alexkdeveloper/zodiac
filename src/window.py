@@ -195,4 +195,5 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
     def set_toast(self, str):
         toast = Adw.Toast(title=str)
+        toast.set_timeout(3)
         self.overlay.add_toast(toast)
