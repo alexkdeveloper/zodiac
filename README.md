@@ -5,4 +5,6 @@ A simple program for plotting horoscopes.
 
 ![screenshot2.png](/data/screenshot2.png)
 
+![screenshot3.png](/data/screenshot3.png)
+
 It is recommended to use the GNOME Builder IDE to build the application.
