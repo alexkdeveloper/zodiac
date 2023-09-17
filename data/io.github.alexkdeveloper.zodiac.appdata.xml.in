@@ -6,7 +6,7 @@
   <name>Zodiac</name>
   <summary>A simple program for plotting horoscopes</summary>
   <description>
-    <p>A simple program for making horoscopes. The application generates horoscopes in svg and txt format. The user only needs to fill in the required fields. The application can make horoscopes for both one and two people.</p>
+    <p>The application generates horoscopes in svg and txt format. The user only needs to fill in the required fields. The application can make horoscopes for both one and two people.</p>
   </description>
   <provides>
     <binary>io.github.alexkdeveloper.zodiac</binary>
@@ -28,10 +28,17 @@
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="1.0.1" date="2023-09-17">
+          <description>
+	      <ul>
+                <li>Added Italian translation</li>
+	     </ul>
+          </description>
+        </release>
     <release version="1.0.0" date="2023-09-13">
           <description>
 	      <ul>
-            <li>Initial release</li>
+                <li>Initial release</li>
 	     </ul>
           </description>
         </release>
