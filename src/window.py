@@ -115,6 +115,12 @@ class ZodiacWindow(Adw.ApplicationWindow):
         if self.drop_down.get_selected() == 0:
            subject = AstrologicalSubject(name, year, month, day, hours, minutes, place)
            chart = KerykeionChartSVG(subject, chart_type="Natal")
+
+           report = Report(subject)
+
+           report_text = report.get_full_report()
+
+           subject_names = name
         else:
            if len(self.entry_name2.get_text().strip()) == 0 or len(self.entry_day2.get_text().strip()) == 0 or len(self.entry_year2.get_text().strip()) == 0 or len(self.entry_hours2.get_text().strip()) == 0 or len(self.entry_minutes2.get_text().strip()) == 0 or len(self.entry_place2.get_text().strip()) == 0:
               self.set_toast(_("Fill in all the fields!"))
@@ -133,7 +139,19 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
            chart = KerykeionChartSVG(subject, chart_type="Synastry", second_obj=subject2)
 
+           report = Report(subject)
+           report2 = Report(subject2)
+
+           report_text = report.get_full_report()+"\n"+report2.get_full_report()
+
+           subject_names = name+name2
+
         path = self.entry_save.get_text()
+
+        path_to_report = path+"/"+subject_names+"Report.txt"
+
+        with open(path_to_report, 'w') as f:
+             f.write(report_text)
 
         chart.set_output_directory(Path(path))
         chart.makeSVG()
@@ -149,15 +167,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(path_to_file)
         self.svg.set_from_pixbuf(pixbuf)
 
-        report = Report(subject)
-        report_text = report.get_full_report()
-
         self.text.set_text(report_text)
-
-        path_to_report = path+"/"+name+"Report.txt"
-
-        with open(path_to_report, 'w') as f:
-             f.write(report_text)
 
         self.stack.set_visible_child(self.result_page)
         self.back_button.set_visible(True)
