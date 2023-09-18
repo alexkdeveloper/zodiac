@@ -1,0 +1,152 @@
+#
+# Sergio Varela <sergiovg01@outlook.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-09-08 22:04+0800\n"
+"PO-Revision-Date: 2023-09-17 23:57+0200\n"
+"Last-Translator: Sergio Varela <sergiovg01@outlook.com>\n"
+"Language-Team: Spanish - Spain <sergiovg01@outlook.com>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 42.0\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: window.ui\n"
+"X-Poedit-SearchPath-1: window.py\n"
+"X-Poedit-SearchPath-2: main.py\n"
+
+#: main.py:58
+msgid "translator-credits"
+msgstr "Sergio Varela"
+
+#: window.py:81
+msgid "Select a Folder"
+msgstr "Seleccionar una carpeta"
+
+#: window.py:104 window.py:120
+msgid "Fill in all the fields!"
+msgstr "Rellene todos los campos!"
+
+#: window.py:144
+msgid "File saved successfully"
+msgstr "Archivo guardado correctamente"
+
+#: window.py:146
+msgid "Failed to save file"
+msgstr "Error al guardar el archivo"
+
+#: window.ui:13
+msgid "Zodiac"
+msgstr "Zodiac"
+
+#: window.ui:21
+msgid "Back"
+msgstr "Volver"
+
+#: window.ui:31
+msgid "For one"
+msgstr "Para uno"
+
+#: window.ui:32
+msgid "For two"
+msgstr "Para dos"
+
+#: window.ui:49
+msgid "Next"
+msgstr "Siguiente"
+
+#: window.ui:56
+msgid "SHOW"
+msgstr "Mostrar"
+
+#: window.ui:77 window.ui:160
+msgid "Name"
+msgstr "Nombre"
+
+#: window.ui:82 window.ui:165
+msgid "Day of births"
+msgstr "Día de nacimiento"
+
+#: window.ui:88 window.ui:171
+msgid "Month of births"
+msgstr "Mes de nacimiento"
+
+#: window.ui:92 window.ui:175
+msgid "January"
+msgstr "Enero"
+
+#: window.ui:93 window.ui:176
+msgid "February"
+msgstr "Febrero"
+
+#: window.ui:94 window.ui:177
+msgid "March"
+msgstr "Маrzo"
+
+#: window.ui:95 window.ui:178
+msgid "April"
+msgstr "Abril"
+
+#: window.ui:96 window.ui:179
+msgid "May"
+msgstr "Mayo"
+
+#: window.ui:97 window.ui:180
+msgid "June"
+msgstr "Junio"
+
+#: window.ui:98 window.ui:181
+msgid "July"
+msgstr "Julio"
+
+#: window.ui:99 window.ui:182
+msgid "August"
+msgstr "Аgosto"
+
+#: window.ui:100 window.ui:183
+msgid "September"
+msgstr "Septiembre"
+
+#: window.ui:101 window.ui:184
+msgid "October"
+msgstr "Octubre"
+
+#: window.ui:102 window.ui:185
+msgid "November"
+msgstr "Noviembre"
+
+#: window.ui:103 window.ui:186
+msgid "December"
+msgstr "Diciembre"
+
+#: window.ui:111 window.ui:194
+msgid "Year of births"
+msgstr "Año de nacimiento"
+
+#: window.ui:116 window.ui:199
+msgid "Time of birth(hours)"
+msgstr "Hora de nacimiento(horas)"
+
+#: window.ui:121 window.ui:204
+msgid "Time of birth(minutes)"
+msgstr "Hora de nacimiento(minutos)"
+
+#: window.ui:126 window.ui:209
+msgid "Place of birth"
+msgstr "Lugar de nacimiento"
+
+#: window.ui:131
+msgid "File save location"
+msgstr "Ubicación para guardar el archivo"
+
+#: window.ui:253
+msgid "_Keyboard Shortcuts"
+msgstr "_Atajos del teclado"
+
+#: window.ui:257
+msgid "_About Zodiac"
+msgstr "_Acerca de Zodiac"
