@@ -8,6 +8,7 @@
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwHeaderBar">
+          <property name="css-classes">flat</property>
           <property name="title-widget">
               <object class="AdwWindowTitle">
                 <property name="title" translatable="yes">Zodiac</property>
