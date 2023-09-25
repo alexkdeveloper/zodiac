@@ -17,134 +17,138 @@ msgstr ""
 "X-Poedit-SearchPath-1: window.py\n"
 "X-Poedit-SearchPath-2: main.py\n"
 
-#: main.py:58
+#: main.py:29
 msgid "translator-credits"
 msgstr "vikdevelop https://github.com/vikdevelop"
 
-#: window.py:81
+#: window.py:82
 msgid "Select a Folder"
 msgstr "Vybrat složku"
 
-#: window.py:104 window.py:120
+#: window.py:105 window.py:131
 msgid "Fill in all the fields!"
 msgstr "Vyplňte všechna pole"
 
-#: window.py:144
+#: window.py:117 window.py:143
+msgid "Enter valid date and time of birth values"
+msgstr "Zadejte platné hodnoty data a času narození"
+
+#: window.py:171
 msgid "File saved successfully"
 msgstr "Soubor byl úspěšně uložen"
 
-#: window.py:146
+#: window.py:173
 msgid "Failed to save file"
 msgstr "Uložení souboru se nezdařilo"
 
-#: window.ui:13
+#: window.ui:14
 msgid "Zodiac"
 msgstr ""
 
-#: window.ui:21
+#: window.ui:22
 msgid "Back"
 msgstr "Zpět"
 
-#: window.ui:31
+#: window.ui:32
 msgid "For one"
 msgstr "Pro jednoho"
 
-#: window.ui:32
+#: window.ui:33
 msgid "For two"
 msgstr "Pro dva"
 
-#: window.ui:49
+#: window.ui:50
 msgid "Next"
 msgstr "Další"
 
-#: window.ui:56
+#: window.ui:57
 msgid "SHOW"
 msgstr "ZOBRAZIT"
 
-#: window.ui:77 window.ui:160
+#: window.ui:78 window.ui:161
 msgid "Name"
 msgstr "Jméno"
 
-#: window.ui:82 window.ui:165
+#: window.ui:83 window.ui:166
 msgid "Day of births"
 msgstr "Den narození"
 
-#: window.ui:88 window.ui:171
+#: window.ui:89 window.ui:172
 msgid "Month of births"
 msgstr "Měsíc narození"
 
-#: window.ui:92 window.ui:175
+#: window.ui:93 window.ui:176
 msgid "January"
 msgstr "Leden"
 
-#: window.ui:93 window.ui:176
+#: window.ui:94 window.ui:177
 msgid "February"
 msgstr "Únor"
 
-#: window.ui:94 window.ui:177
+#: window.ui:95 window.ui:178
 msgid "March"
 msgstr "Březen"
 
-#: window.ui:95 window.ui:178
+#: window.ui:96 window.ui:179
 msgid "April"
 msgstr "Duben"
 
-#: window.ui:96 window.ui:179
+#: window.ui:97 window.ui:180
 msgid "May"
 msgstr "Květen"
 
-#: window.ui:97 window.ui:180
+#: window.ui:98 window.ui:181
 msgid "June"
 msgstr "Červen"
 
-#: window.ui:98 window.ui:181
+#: window.ui:99 window.ui:182
 msgid "July"
 msgstr "Červenec"
 
-#: window.ui:99 window.ui:182
+#: window.ui:100 window.ui:183
 msgid "August"
 msgstr "Srpen"
 
-#: window.ui:100 window.ui:183
+#: window.ui:101 window.ui:184
 msgid "September"
 msgstr "Září"
 
-#: window.ui:101 window.ui:184
+#: window.ui:102 window.ui:185
 msgid "October"
 msgstr "Říjen"
 
-#: window.ui:102 window.ui:185
+#: window.ui:103 window.ui:186
 msgid "November"
 msgstr "Listopad"
 
-#: window.ui:103 window.ui:186
+#: window.ui:104 window.ui:187
 msgid "December"
 msgstr "Prosinec"
 
-#: window.ui:111 window.ui:194
+#: window.ui:112 window.ui:195
 msgid "Year of births"
 msgstr "Rok narození"
 
-#: window.ui:116 window.ui:199
+#: window.ui:117 window.ui:200
 msgid "Time of birth(hours)"
 msgstr "Čas narození (v hodinách)"
 
-#: window.ui:121 window.ui:204
+#: window.ui:122 window.ui:205
 msgid "Time of birth(minutes)"
 msgstr "Čas narození (v minutách)"
 
-#: window.ui:126 window.ui:209
+#: window.ui:127 window.ui:210
 msgid "Place of birth"
 msgstr "Místo narození"
 
-#: window.ui:131
+#: window.ui:132
 msgid "File save location"
 msgstr "Umístění pro uložení souboru"
 
-#: window.ui:253
+#: window.ui:254
 msgid "_Keyboard Shortcuts"
 msgstr "_Klávesové zkratky"
 
-#: window.ui:257
+#: window.ui:258
 msgid "_About Zodiac"
 msgstr "_O aplikaci Zodiac"
