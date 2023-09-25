@@ -22,6 +22,7 @@ from gi.repository import Gtk
 from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import GdkPixbuf
+from datetime import datetime
 from pathlib import Path
 from kerykeion import AstrologicalSubject, KerykeionChartSVG, Report
 
@@ -112,6 +113,10 @@ class ZodiacWindow(Adw.ApplicationWindow):
         minutes = int(self.entry_minutes.get_text())
         place = self.entry_place.get_text()
 
+        if not self.is_valid_date_time(day, month, year, hours, minutes):
+           self.set_toast(_("Enter valid date and time of birth values"))
+           return
+
         if self.drop_down.get_selected() == 0:
            subject = AstrologicalSubject(name, year, month, day, hours, minutes, place)
            chart = KerykeionChartSVG(subject, chart_type="Natal")
@@ -133,6 +138,10 @@ class ZodiacWindow(Adw.ApplicationWindow):
            hours2 = int(self.entry_hours2.get_text())
            minutes2 = int(self.entry_minutes2.get_text())
            place2 = self.entry_place2.get_text()
+
+           if not self.is_valid_date_time(day2, month2, year2, hours2, minutes2):
+              self.set_toast(_("Enter valid date and time of birth values"))
+              return
 
            subject = AstrologicalSubject(name, year, month, day, hours, minutes, place)
            subject2 = AstrologicalSubject(name2, year2, month2, day2, hours2, minutes2, place2)
@@ -175,6 +184,13 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.next_button.set_visible(False)
         self.show_button.set_visible(False)
 
+    def is_valid_date_time(self, day, month, year, hours, minutes):
+        try:
+           datetime(year, month, day, hours, minutes)
+           return True
+        except ValueError:
+           return False
+
     def on_back_clicked(self, widget):
         if self.drop_down.get_selected() == 0:
            self.stack.set_visible_child(self.data_page)
@@ -205,5 +221,5 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
     def set_toast(self, str):
         toast = Adw.Toast(title=str)
-        toast.set_timeout(3)
+        toast.set_timeout(4)
         self.overlay.add_toast(toast)

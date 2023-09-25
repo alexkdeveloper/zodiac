@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-09-08 22:04+0800\n"
-"PO-Revision-Date: 2023-09-08 22:06+0800\n"
+"POT-Creation-Date: 2023-09-25 16:49+0800\n"
+"PO-Revision-Date: 2023-09-25 16:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -17,134 +17,138 @@ msgstr ""
 "X-Poedit-SearchPath-1: window.py\n"
 "X-Poedit-SearchPath-2: main.py\n"
 
-#: main.py:58
+#: main.py:29
 msgid "translator-credits"
 msgstr "Alex Kryuchkov"
 
-#: window.py:81
+#: window.py:82
 msgid "Select a Folder"
 msgstr "Выбор Папки"
 
-#: window.py:104 window.py:120
+#: window.py:105 window.py:131
 msgid "Fill in all the fields!"
 msgstr "Заполните все поля!"
 
-#: window.py:144
+#: window.py:117 window.py:143
+msgid "Enter valid date and time of birth values"
+msgstr "Введите действительные значения даты и времени рождения"
+
+#: window.py:171
 msgid "File saved successfully"
 msgstr "Файл успешно сохранен"
 
-#: window.py:146
+#: window.py:173
 msgid "Failed to save file"
 msgstr "Не удалось сохранить файл"
 
-#: window.ui:13
+#: window.ui:14
 msgid "Zodiac"
 msgstr ""
 
-#: window.ui:21
+#: window.ui:22
 msgid "Back"
 msgstr "Назад"
 
-#: window.ui:31
+#: window.ui:32
 msgid "For one"
 msgstr "Для одного"
 
-#: window.ui:32
+#: window.ui:33
 msgid "For two"
 msgstr "Для двоих"
 
-#: window.ui:49
+#: window.ui:50
 msgid "Next"
 msgstr "Следующий"
 
-#: window.ui:56
+#: window.ui:57
 msgid "SHOW"
 msgstr "ПОКАЗАТЬ"
 
-#: window.ui:77 window.ui:160
+#: window.ui:78 window.ui:161
 msgid "Name"
 msgstr "Имя"
 
-#: window.ui:82 window.ui:165
+#: window.ui:83 window.ui:166
 msgid "Day of births"
 msgstr "День рождения"
 
-#: window.ui:88 window.ui:171
+#: window.ui:89 window.ui:172
 msgid "Month of births"
 msgstr "Месяц рождения"
 
-#: window.ui:92 window.ui:175
+#: window.ui:93 window.ui:176
 msgid "January"
 msgstr "Январь"
 
-#: window.ui:93 window.ui:176
+#: window.ui:94 window.ui:177
 msgid "February"
 msgstr "Февраль"
 
-#: window.ui:94 window.ui:177
+#: window.ui:95 window.ui:178
 msgid "March"
 msgstr "Март"
 
-#: window.ui:95 window.ui:178
+#: window.ui:96 window.ui:179
 msgid "April"
 msgstr "Апрель"
 
-#: window.ui:96 window.ui:179
+#: window.ui:97 window.ui:180
 msgid "May"
 msgstr "Май"
 
-#: window.ui:97 window.ui:180
+#: window.ui:98 window.ui:181
 msgid "June"
 msgstr "Июнь"
 
-#: window.ui:98 window.ui:181
+#: window.ui:99 window.ui:182
 msgid "July"
 msgstr "Июль"
 
-#: window.ui:99 window.ui:182
+#: window.ui:100 window.ui:183
 msgid "August"
 msgstr "Август"
 
-#: window.ui:100 window.ui:183
+#: window.ui:101 window.ui:184
 msgid "September"
 msgstr "Сентябрь"
 
-#: window.ui:101 window.ui:184
+#: window.ui:102 window.ui:185
 msgid "October"
 msgstr "Октябрь"
 
-#: window.ui:102 window.ui:185
+#: window.ui:103 window.ui:186
 msgid "November"
 msgstr "Ноябрь"
 
-#: window.ui:103 window.ui:186
+#: window.ui:104 window.ui:187
 msgid "December"
 msgstr "Декабрь"
 
-#: window.ui:111 window.ui:194
+#: window.ui:112 window.ui:195
 msgid "Year of births"
 msgstr "Год рождения"
 
-#: window.ui:116 window.ui:199
+#: window.ui:117 window.ui:200
 msgid "Time of birth(hours)"
 msgstr "Время рождения(часы)"
 
-#: window.ui:121 window.ui:204
+#: window.ui:122 window.ui:205
 msgid "Time of birth(minutes)"
 msgstr "Время рождения(минуты)"
 
-#: window.ui:126 window.ui:209
+#: window.ui:127 window.ui:210
 msgid "Place of birth"
 msgstr "Место рождения"
 
-#: window.ui:131
+#: window.ui:132
 msgid "File save location"
 msgstr "Место сохранения файла"
 
-#: window.ui:253
+#: window.ui:254
 msgid "_Keyboard Shortcuts"
 msgstr "_Комбинации Клавиш"
 
-#: window.ui:257
+#: window.ui:258
 msgid "_About Zodiac"
 msgstr "_О Программе"
