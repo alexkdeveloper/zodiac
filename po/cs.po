@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-09-08 22:04+0800\n"
+"PO-Revision-Date: 2023-09-14 21:06+0200\n"
+"Last-Translator: vikdevelop\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: window.ui\n"
+"X-Poedit-SearchPath-1: window.py\n"
+"X-Poedit-SearchPath-2: main.py\n"
+
+#: main.py:29
+msgid "translator-credits"
+msgstr "vikdevelop https://github.com/vikdevelop"
+
+#: window.py:82
+msgid "Select a Folder"
+msgstr "Vybrat složku"
+
+#: window.py:105 window.py:131
+msgid "Fill in all the fields!"
+msgstr "Vyplňte všechna pole"
+
+#: window.py:117 window.py:143
+msgid "Enter valid date and time of birth values"
+msgstr "Zadejte platné hodnoty data a času narození"
+
+#: window.py:171
+msgid "File saved successfully"
+msgstr "Soubor byl úspěšně uložen"
+
+#: window.py:173
+msgid "Failed to save file"
+msgstr "Uložení souboru se nezdařilo"
+
+#: window.ui:14
+msgid "Zodiac"
+msgstr ""
+
+#: window.ui:22
+msgid "Back"
+msgstr "Zpět"
+
+#: window.ui:32
+msgid "For one"
+msgstr "Pro jednoho"
+
+#: window.ui:33
+msgid "For two"
+msgstr "Pro dva"
+
+#: window.ui:50
+msgid "Next"
+msgstr "Další"
+
+#: window.ui:57
+msgid "SHOW"
+msgstr "ZOBRAZIT"
+
+#: window.ui:78 window.ui:161
+msgid "Name"
+msgstr "Jméno"
+
+#: window.ui:83 window.ui:166
+msgid "Day of births"
+msgstr "Den narození"
+
+#: window.ui:89 window.ui:172
+msgid "Month of births"
+msgstr "Měsíc narození"
+
+#: window.ui:93 window.ui:176
+msgid "January"
+msgstr "Leden"
+
+#: window.ui:94 window.ui:177
+msgid "February"
+msgstr "Únor"
+
+#: window.ui:95 window.ui:178
+msgid "March"
+msgstr "Březen"
+
+#: window.ui:96 window.ui:179
+msgid "April"
+msgstr "Duben"
+
+#: window.ui:97 window.ui:180
+msgid "May"
+msgstr "Květen"
+
+#: window.ui:98 window.ui:181
+msgid "June"
+msgstr "Červen"
+
+#: window.ui:99 window.ui:182
+msgid "July"
+msgstr "Červenec"
+
+#: window.ui:100 window.ui:183
+msgid "August"
+msgstr "Srpen"
+
+#: window.ui:101 window.ui:184
+msgid "September"
+msgstr "Září"
+
+#: window.ui:102 window.ui:185
+msgid "October"
+msgstr "Říjen"
+
+#: window.ui:103 window.ui:186
+msgid "November"
+msgstr "Listopad"
+
+#: window.ui:104 window.ui:187
+msgid "December"
+msgstr "Prosinec"
+
+#: window.ui:112 window.ui:195
+msgid "Year of births"
+msgstr "Rok narození"
+
+#: window.ui:117 window.ui:200
+msgid "Time of birth(hours)"
+msgstr "Čas narození (v hodinách)"
+
+#: window.ui:122 window.ui:205
+msgid "Time of birth(minutes)"
+msgstr "Čas narození (v minutách)"
+
+#: window.ui:127 window.ui:210
+msgid "Place of birth"
+msgstr "Místo narození"
+
+#: window.ui:132
+msgid "File save location"
+msgstr "Umístění pro uložení souboru"
+
+#: window.ui:254
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: window.ui:258
+msgid "_About Zodiac"
+msgstr "_O aplikaci Zodiac"
