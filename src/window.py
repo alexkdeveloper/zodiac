@@ -229,8 +229,6 @@ class ZodiacWindow(Adw.ApplicationWindow):
     def show_image(self, widget):
         win = Adw.Window()
         win.set_title(_("Show Image"))
-        win.set_modal(True)
-        win.set_transient_for(self)
         win.set_default_size(700, 400)
 
         image = Gtk.Image()
