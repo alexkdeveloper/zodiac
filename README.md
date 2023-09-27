@@ -7,6 +7,4 @@ The application uses the [Kerykeion library](https://pypi.org/project/kerykeion/
 
 ![screenshot2.png](/data/screenshot2.png)
 
-![screenshot3.png](/data/screenshot3.png)
-
 [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" width="200" alt="Download on Flathub">](https://flathub.org/apps/details/io.github.alexkdeveloper.zodiac)

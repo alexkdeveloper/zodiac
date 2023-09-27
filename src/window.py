@@ -21,11 +21,9 @@ from gi.repository import Adw
 from gi.repository import Gtk
 from gi.repository import Gio
 from gi.repository import GLib
-from gi.repository import GdkPixbuf
 from datetime import datetime
 from pathlib import Path
 from kerykeion import AstrologicalSubject, KerykeionChartSVG, Report
-
 
 @Gtk.Template(resource_path='/io/github/alexkdeveloper/zodiac/window.ui')
 class ZodiacWindow(Adw.ApplicationWindow):
@@ -33,6 +31,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
     drop_down = Gtk.Template.Child()
     show_button = Gtk.Template.Child()
+    show_image_button = Gtk.Template.Child()
     back_button = Gtk.Template.Child()
     next_button = Gtk.Template.Child()
     save_button = Gtk.Template.Child()
@@ -59,10 +58,13 @@ class ZodiacWindow(Adw.ApplicationWindow):
     entry_place2 = Gtk.Template.Child()
     combo2 = Gtk.Template.Child()
 
+    path_to_file = ""
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
         self.show_button.connect("clicked", self.on_show_clicked)
+        self.show_image_button.connect("clicked", self.show_image)
         self.back_button.connect("clicked", self.on_back_clicked)
         self.next_button.connect("clicked", self.on_next_clicked)
         self.save_button.connect("clicked", self.show_open_dialog)
@@ -70,6 +72,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
         self.back_button.set_visible(False)
         self.next_button.set_visible(False)
+        self.show_image_button.set_visible(False)
 
         self.settings = Gio.Settings(schema_id="io.github.alexkdeveloper.zodiac")
 
@@ -165,16 +168,15 @@ class ZodiacWindow(Adw.ApplicationWindow):
         chart.set_output_directory(Path(path))
         chart.makeSVG()
 
-        path_to_file = path+"/"+name+chart.chart_type+"Chart.svg"
+        self.path_to_file = path+"/"+name+chart.chart_type+"Chart.svg"
 
-        if Path(path_to_file).exists():
+        if Path(self.path_to_file).exists():
             self.set_toast(_("File saved successfully"))
         else:
             self.set_toast(_("Failed to save file"))
             return
 
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file(path_to_file)
-        self.svg.set_from_pixbuf(pixbuf)
+        self.svg.set_from_file(self.path_to_file)
 
         self.text.set_text(report_text)
 
@@ -183,6 +185,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.drop_down.set_visible(False)
         self.next_button.set_visible(False)
         self.show_button.set_visible(False)
+        self.show_image_button.set_visible(True)
 
     def is_valid_date_time(self, day, month, year, hours, minutes):
         try:
@@ -198,6 +201,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
            self.next_button.set_visible(False)
            self.drop_down.set_visible(True)
            self.show_button.set_visible(True)
+           self.show_image_button.set_visible(False)
         else:
            if self.stack.get_visible_child() == self.result_page:
               self.stack.set_visible_child(self.data_page2)
@@ -205,12 +209,14 @@ class ZodiacWindow(Adw.ApplicationWindow):
               self.next_button.set_visible(False)
               self.drop_down.set_visible(False)
               self.show_button.set_visible(True)
+              self.show_image_button.set_visible(False)
            else:
               self.stack.set_visible_child(self.data_page)
               self.back_button.set_visible(False)
               self.next_button.set_visible(True)
               self.drop_down.set_visible(True)
               self.show_button.set_visible(False)
+              self.show_image_button.set_visible(False)
 
     def on_next_clicked(self, widget):
         self.stack.set_visible_child(self.data_page2)
@@ -218,6 +224,29 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.next_button.set_visible(False)
         self.drop_down.set_visible(False)
         self.show_button.set_visible(True)
+        self.show_image_button.set_visible(False)
+
+    def show_image(self, widget):
+        win = Adw.Window()
+        win.set_title(_("Show Image"))
+        win.set_modal(True)
+        win.set_transient_for(self)
+        win.set_default_size(700, 400)
+
+        image = Gtk.Image()
+        image.set_from_file(self.path_to_file)
+        image.set_vexpand(True)
+        image.set_hexpand(True)
+
+        headerbar = Adw.HeaderBar()
+        headerbar.add_css_class("flat")
+
+        box = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
+        box.append(headerbar)
+        box.append(image)
+
+        win.set_content(box)
+        win.show()
 
     def set_toast(self, str):
         toast = Adw.Toast(title=str)
