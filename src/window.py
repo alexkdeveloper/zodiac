@@ -85,7 +85,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.open_dialog = Gtk.FileDialog.new()
         self.open_dialog.set_title(_("Select a Folder"))
 
-    def show_open_dialog(self, button):
+    def show_open_dialog(self, widget):
         self.open_dialog.select_folder(self, None, self.open_dialog_open_callback)
 
     def open_dialog_open_callback(self, dialog, result):
@@ -236,6 +236,6 @@ class ZodiacWindow(Adw.ApplicationWindow):
         Gtk.show_uri(None, "file://"+self.path, Gdk.CURRENT_TIME)
 
     def set_toast(self, str):
-        toast = Adw.Toast(title=str)
+        toast = Adw.Toast.new(str)
         toast.set_timeout(4)
         self.overlay.add_toast(toast)
