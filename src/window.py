@@ -19,6 +19,7 @@
 
 from gi.repository import Adw
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import Gio
 from gi.repository import GLib
 from datetime import datetime
@@ -31,7 +32,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
     drop_down = Gtk.Template.Child()
     show_button = Gtk.Template.Child()
-    show_image_button = Gtk.Template.Child()
+    open_button = Gtk.Template.Child()
     back_button = Gtk.Template.Child()
     next_button = Gtk.Template.Child()
     save_button = Gtk.Template.Child()
@@ -58,13 +59,13 @@ class ZodiacWindow(Adw.ApplicationWindow):
     entry_place2 = Gtk.Template.Child()
     combo2 = Gtk.Template.Child()
 
-    path_to_file = ""
+    path = ""
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
         self.show_button.connect("clicked", self.on_show_clicked)
-        self.show_image_button.connect("clicked", self.show_image)
+        self.open_button.connect("clicked", self.on_open_clicked)
         self.back_button.connect("clicked", self.on_back_clicked)
         self.next_button.connect("clicked", self.on_next_clicked)
         self.save_button.connect("clicked", self.show_open_dialog)
@@ -72,7 +73,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
         self.back_button.set_visible(False)
         self.next_button.set_visible(False)
-        self.show_image_button.set_visible(False)
+        self.open_button.set_visible(False)
 
         self.settings = Gio.Settings(schema_id="io.github.alexkdeveloper.zodiac")
 
@@ -120,6 +121,8 @@ class ZodiacWindow(Adw.ApplicationWindow):
            self.set_toast(_("Enter valid date and time of birth values"))
            return
 
+        report_text = ""
+
         if self.drop_down.get_selected() == 0:
            subject = AstrologicalSubject(name, year, month, day, hours, minutes, place)
            chart = KerykeionChartSVG(subject, chart_type="Natal")
@@ -158,34 +161,37 @@ class ZodiacWindow(Adw.ApplicationWindow):
 
            subject_names = name+name2
 
-        path = self.entry_save.get_text()
+        self.path = self.entry_save.get_text()
 
-        path_to_report = path+"/"+subject_names+"Report.txt"
+        path_to_report = self.path+"/"+subject_names+"Report.txt"
 
         with open(path_to_report, 'w') as f:
              f.write(report_text)
 
-        chart.set_output_directory(Path(path))
+        chart.set_output_directory(Path(self.path))
         chart.makeSVG()
 
-        self.path_to_file = path+"/"+name+chart.chart_type+"Chart.svg"
+        path_to_chart = self.path+"/"+name+chart.chart_type+"Chart.svg"
 
-        if Path(self.path_to_file).exists():
-            self.set_toast(_("File saved successfully"))
-        else:
-            self.set_toast(_("Failed to save file"))
-            return
-
-        self.svg.set_from_file(self.path_to_file)
+        self.svg.set_from_file(path_to_chart)
 
         self.text.set_text(report_text)
+
+        if Path(path_to_chart).exists() and Path(path_to_report).exists():
+            self.set_toast(_("Files saved successfully"))
+        elif not Path(path_to_chart).exists() and Path(path_to_report).exists():
+            self.set_toast(_("Failed to save svg file"))
+        elif Path(path_to_chart).exists() and not Path(path_to_report).exists():
+            self.set_toast(_("Failed to save txt file"))
+        else:
+            self.set_toast(_("Failed to save files"))
 
         self.stack.set_visible_child(self.result_page)
         self.back_button.set_visible(True)
         self.drop_down.set_visible(False)
         self.next_button.set_visible(False)
         self.show_button.set_visible(False)
-        self.show_image_button.set_visible(True)
+        self.open_button.set_visible(True)
 
     def is_valid_date_time(self, day, month, year, hours, minutes):
         try:
@@ -201,7 +207,7 @@ class ZodiacWindow(Adw.ApplicationWindow):
            self.next_button.set_visible(False)
            self.drop_down.set_visible(True)
            self.show_button.set_visible(True)
-           self.show_image_button.set_visible(False)
+           self.open_button.set_visible(False)
         else:
            if self.stack.get_visible_child() == self.result_page:
               self.stack.set_visible_child(self.data_page2)
@@ -209,14 +215,14 @@ class ZodiacWindow(Adw.ApplicationWindow):
               self.next_button.set_visible(False)
               self.drop_down.set_visible(False)
               self.show_button.set_visible(True)
-              self.show_image_button.set_visible(False)
+              self.open_button.set_visible(False)
            else:
               self.stack.set_visible_child(self.data_page)
               self.back_button.set_visible(False)
               self.next_button.set_visible(True)
               self.drop_down.set_visible(True)
               self.show_button.set_visible(False)
-              self.show_image_button.set_visible(False)
+              self.open_button.set_visible(False)
 
     def on_next_clicked(self, widget):
         self.stack.set_visible_child(self.data_page2)
@@ -224,27 +230,10 @@ class ZodiacWindow(Adw.ApplicationWindow):
         self.next_button.set_visible(False)
         self.drop_down.set_visible(False)
         self.show_button.set_visible(True)
-        self.show_image_button.set_visible(False)
+        self.open_button.set_visible(False)
 
-    def show_image(self, widget):
-        win = Adw.Window()
-        win.set_title(_("Show Image"))
-        win.set_default_size(700, 400)
-
-        image = Gtk.Image()
-        image.set_from_file(self.path_to_file)
-        image.set_vexpand(True)
-        image.set_hexpand(True)
-
-        headerbar = Adw.HeaderBar()
-        headerbar.add_css_class("flat")
-
-        box = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
-        box.append(headerbar)
-        box.append(image)
-
-        win.set_content(box)
-        win.show()
+    def on_open_clicked(self, widget):
+        Gtk.show_uri(None, "file://"+self.path, Gdk.CURRENT_TIME)
 
     def set_toast(self, str):
         toast = Adw.Toast(title=str)

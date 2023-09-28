@@ -43,11 +43,11 @@
               </object>
             </child>
             <child type="end">
-              <object class="GtkButton" id="show_image_button">
+              <object class="GtkButton" id="open_button">
                 <property name="child">
                   <object class="AdwButtonContent">
-                   <property name="icon-name">image-x-generic-symbolic</property>
-                   <property name="tooltip-text" translatable="yes">Show image in separate window</property>
+                   <property name="icon-name">folder-open-symbolic</property>
+                   <property name="tooltip-text" translatable="yes">Open a folder with files</property>
                  </object>
                </property>
               </object>
@@ -139,7 +139,7 @@
                     </child>
                    <child>
                       <object class="AdwEntryRow" id="entry_save">
-                        <property name="title" translatable="yes">File save location</property>
+                        <property name="title" translatable="yes">Files save location</property>
                         <child>
                           <object class="GtkButton" id="save_button">
                             <property name="icon-name">folder-open-symbolic</property>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-09-27 19:29+0800\n"
-"PO-Revision-Date: 2023-09-27 19:32+0800\n"
+"POT-Creation-Date: 2023-09-28 11:39+0800\n"
+"PO-Revision-Date: 2023-09-28 11:41+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -21,29 +21,33 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Alex Kryuchkov"
 
-#: window.py:85
+#: window.py:86
 msgid "Select a Folder"
 msgstr "Выбор Папки"
 
-#: window.py:108 window.py:134
+#: window.py:109 window.py:137
 msgid "Fill in all the fields!"
 msgstr "Заполните все поля!"
 
-#: window.py:120 window.py:146
+#: window.py:121 window.py:149
 msgid "Enter valid date and time of birth values"
 msgstr "Введите действительные значения даты и времени рождения"
 
-#: window.py:174
-msgid "File saved successfully"
-msgstr "Файл успешно сохранен"
+#: window.py:181
+msgid "Files saved successfully"
+msgstr "Файлы успешно сохранены"
 
-#: window.py:176
-msgid "Failed to save file"
-msgstr "Не удалось сохранить файл"
+#: window.py:183
+msgid "Failed to save svg file"
+msgstr "Не удалось сохранить svg-файл"
 
-#: window.py:231
-msgid "Show Image"
-msgstr "Показать Изображение"
+#: window.py:185
+msgid "Failed to save txt file"
+msgstr "Не удалось сохранить txt-файл"
+
+#: window.py:187
+msgid "Failed to save files"
+msgstr "Не удалось сохранить файлы"
 
 #: window.ui:14
 msgid "Zodiac"
@@ -62,8 +66,8 @@ msgid "For two"
 msgstr "Для двоих"
 
 #: window.ui:50
-msgid "Show image in separate window"
-msgstr "Показать изображение в отдельном окне"
+msgid "Open a folder with files"
+msgstr "Открыть папку с файлами"
 
 #: window.ui:60
 msgid "Next"
@@ -150,8 +154,8 @@ msgid "Place of birth"
 msgstr "Место рождения"
 
 #: window.ui:142
-msgid "File save location"
-msgstr "Место сохранения файла"
+msgid "Files save location"
+msgstr "Место сохранения файлов"
 
 #: window.ui:264
 msgid "_Keyboard Shortcuts"
@@ -164,3 +168,9 @@ msgstr "_О Программе"
 #: window.ui:272
 msgid "_Quit"
 msgstr "_Выход"
+
+#~ msgid "Show Image"
+#~ msgstr "Показать Изображение"
+
+#~ msgid "Show image in separate window"
+#~ msgstr "Показать изображение в отдельном окне"
