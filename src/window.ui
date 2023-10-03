@@ -3,6 +3,14 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="ZodiacWindow" parent="AdwApplicationWindow">
+    <property name="width-request">400</property>
+    <property name="height-request">400</property>
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 500sp</condition>
+        <setter object="result_page" property="orientation">vertical</setter>
+      </object>
+    </child>
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
@@ -76,7 +84,11 @@
             <property name="transition-duration">600</property>
             <property name="transition-type">slide-left-right</property>
             <child>
-              <object class="AdwClamp" id="data_page">
+            <object class="GtkScrolledWindow" id="data_page">
+            <property name="propagate_natural_height">True</property>
+            <property name="propagate_natural_width">True</property>
+            <child>
+              <object class="AdwClamp">
                 <property name="tightening-threshold">100</property>
                 <property name="valign">center</property>
                 <property name="margin-top">36</property>
@@ -158,8 +170,14 @@
               </child>
               </object>
             </child>
+          </object>
+          </child>
             <child>
-              <object class="AdwClamp" id="data_page2">
+            <object class="GtkScrolledWindow" id="data_page2">
+            <property name="propagate_natural_height">True</property>
+            <property name="propagate_natural_width">True</property>
+            <child>
+              <object class="AdwClamp">
                 <property name="tightening-threshold">100</property>
                 <property name="valign">center</property>
                 <property name="margin-top">36</property>
@@ -225,7 +243,9 @@
                   </style>
                 </object>
               </child>
-              </object>
+             </object>
+            </child>
+            </object>
             </child>
               <child>
                   <object class="GtkBox" id="result_page">
