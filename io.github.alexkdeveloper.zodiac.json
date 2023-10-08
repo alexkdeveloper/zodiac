@@ -32,13 +32,13 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/16/2b/26b122b8947c4c47249926d7dc01543b0c456900bc8ead456b10c69a2316/kerykeion-4.1.1.tar.gz",
-            "sha256": "4fa3a1360eccdd9592cee4438dcf578dc557514aa938c39cf443ae16dc6e787e"
+            "url": "https://files.pythonhosted.org/packages/cc/27/735b13901321a0d34a243923f88a407cd734aaef5730086f1529aa655495/kerykeion-4.2.4.tar.gz",
+            "sha256": "7202265f43eba2204af828c7771ffed892907e66c7f59c36ab682c009ab38f06"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/3a/cd/2f195cb564e0609efff7acdce27cb7b055f84f15eea28f9c92a1a0bc42a8/kerykeion-4.1.1-py3-none-any.whl",
-            "sha256": "51ea95a38235682e03322c4ffdca6968270ca875d288af4cc005fa74a720e7d8"
+            "url": "https://files.pythonhosted.org/packages/1c/8c/4ecb62fb99bf5422b7274f7548ea70a16853646499af7695e4ed83a8efde/kerykeion-4.2.4-py3-none-any.whl",
+            "sha256": "d5a04ea92386ab484e174a639e77acf0fd397c814ebfe3dcca6797637bc753ec"
         },
         {
             "type": "file",
