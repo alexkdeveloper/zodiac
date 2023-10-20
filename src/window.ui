@@ -77,7 +77,7 @@
             </child>
           </object>
         </child>
-         <child>
+        <child>
         <object class="AdwToastOverlay" id="overlay">
         <child>
           <object class="GtkStack" id="stack">
