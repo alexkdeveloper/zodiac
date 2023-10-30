@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the zodiac package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: zodiac\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-30 19:52+0100\n"
+"PO-Revision-Date: 2023-10-30 19:57+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4\n"
+
+#: data/io.github.alexkdeveloper.zodiac.desktop.in:3
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:6 src/window.ui:22
+msgid "Zodiac"
+msgstr "Zodiac"
+
+#: data/io.github.alexkdeveloper.zodiac.desktop.in:4
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:7
+msgid "A simple program for plotting horoscopes"
+msgstr "Een eenvoudige toepassing voor het uiteenzetten van horoscopen"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:9
+msgid ""
+"The application generates horoscopes in svg and txt format. The user only "
+"needs to fill in the required fields. The application can make horoscopes "
+"for both one and two people."
+msgstr ""
+"Deze toepassing stelt horoscopen samen in zowel svg- als txt-formaat. Het "
+"enige wat u hoeft te doen is de vereiste velden in te vullen. De "
+"toepassing kan horoscopen maken voor een of twee personen."
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:14
+msgid "Alex Kryuchkov"
+msgstr "Alex Kryuchkov"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:31
+msgid "Updated the Kerykeion library"
+msgstr "Bijgewerkt: de Kerykeion-bibliotheek"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:38
+msgid "Added AdwBreakpoint"
+msgstr "Nieuw: AdwBreakpoint"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:45
+msgid "Updated the horoscope display page"
+msgstr "Bijgewerkt: horoscoopweergave"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:52
+msgid "Added Czech translation"
+msgstr "Nieuw: Tsjechische vertaling"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:59
+msgid "Updated to GNOME Platform 45"
+msgstr "Bijgewerkt: GNOME-platform naar versie 45"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:66
+msgid "Added Spanish translation"
+msgstr "Nieuw: Spaanse vertaling"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:73
+msgid "Added Italian translation"
+msgstr "Nieuw: Italiaanse vertaling"
+
+#: data/io.github.alexkdeveloper.zodiac.appdata.xml.in:80
+msgid "Initial release"
+msgstr "Eerste versie"
+
+#: src/main.py:29
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#: src/window.py:86
+msgid "Select a Folder"
+msgstr "Kies een map"
+
+#: src/window.py:109 src/window.py:137
+msgid "Fill in all the fields!"
+msgstr "Vul alle vereiste velden in!"
+
+#: src/window.py:121 src/window.py:149
+msgid "Enter valid date and time of birth values"
+msgstr "Voer een geldige datum en tijd in bij de geboortewaarden"
+
+#: src/window.py:181
+msgid "Files saved successfully"
+msgstr "De bestanden zijn opgeslagen"
+
+#: src/window.py:183
+msgid "Failed to save svg file"
+msgstr "Het svg-bestand kan niet worden opgeslagen"
+
+#: src/window.py:185
+msgid "Failed to save txt file"
+msgstr "Het txt-bestand kan niet worden opgeslagen"
+
+#: src/window.py:187
+msgid "Failed to save files"
+msgstr "De bestanden kunnen niet worden opgeslagen"
+
+#: src/window.ui:30
+msgid "Back"
+msgstr "Terug"
+
+#: src/window.ui:40
+msgid "For one"
+msgstr "Voor één persoon"
+
+#: src/window.ui:41
+msgid "For two"
+msgstr "Voor twee personen"
+
+#: src/window.ui:58
+msgid "Open a folder with files"
+msgstr "Map met bestanden openen"
+
+#: src/window.ui:68
+msgid "Next"
+msgstr "Volgende"
+
+#: src/window.ui:75
+msgid "SHOW"
+msgstr "BEKIJKEN"
+
+#: src/window.ui:100 src/window.ui:189
+msgid "Name"
+msgstr "Naam"
+
+#: src/window.ui:105 src/window.ui:194
+msgid "Day of births"
+msgstr "Geboortedag"
+
+#: src/window.ui:111 src/window.ui:200
+msgid "Month of births"
+msgstr "Geboortemaand"
+
+#: src/window.ui:115 src/window.ui:204
+msgid "January"
+msgstr "januari"
+
+#: src/window.ui:116 src/window.ui:205
+msgid "February"
+msgstr "februari"
+
+#: src/window.ui:117 src/window.ui:206
+msgid "March"
+msgstr "maart"
+
+#: src/window.ui:118 src/window.ui:207
+msgid "April"
+msgstr "april"
+
+#: src/window.ui:119 src/window.ui:208
+msgid "May"
+msgstr "mei"
+
+#: src/window.ui:120 src/window.ui:209
+msgid "June"
+msgstr "juni"
+
+#: src/window.ui:121 src/window.ui:210
+msgid "July"
+msgstr "juli"
+
+#: src/window.ui:122 src/window.ui:211
+msgid "August"
+msgstr "augustus"
+
+#: src/window.ui:123 src/window.ui:212
+msgid "September"
+msgstr "september"
+
+#: src/window.ui:124 src/window.ui:213
+msgid "October"
+msgstr "oktober"
+
+#: src/window.ui:125 src/window.ui:214
+msgid "November"
+msgstr "november"
+
+#: src/window.ui:126 src/window.ui:215
+msgid "December"
+msgstr "december"
+
+#: src/window.ui:134 src/window.ui:223
+msgid "Year of births"
+msgstr "Geboortejaar"
+
+#: src/window.ui:139 src/window.ui:228
+msgid "Time of birth(hours)"
+msgstr "Geboortetijd (in uur)"
+
+#: src/window.ui:144 src/window.ui:233
+msgid "Time of birth(minutes)"
+msgstr "Geboortetijd (in minuten)"
+
+#: src/window.ui:149 src/window.ui:238
+msgid "Place of birth"
+msgstr "Geboorteplaats"
+
+#: src/window.ui:154
+msgid "Files save location"
+msgstr "Opslaglocatie"
+
+#: src/window.ui:284
+msgid "_Keyboard Shortcuts"
+msgstr "_Sneltoetsen"
+
+#: src/window.ui:288
+msgid "_About Zodiac"
+msgstr "Over Zodi_ac"
+
+#: src/window.ui:292
+msgid "_Quit"
+msgstr "A_fsluiten"
