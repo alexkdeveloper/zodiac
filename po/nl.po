@@ -215,8 +215,8 @@ msgstr "_Sneltoetsen"
 
 #: src/window.ui:288
 msgid "_About Zodiac"
-msgstr "Over Zodi_ac"
+msgstr "_Over Zodiac"
 
 #: src/window.ui:292
 msgid "_Quit"
-msgstr "A_fsluiten"
+msgstr "_Afsluiten"
