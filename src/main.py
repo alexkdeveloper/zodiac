@@ -54,7 +54,7 @@ class ZodiacApplication(Adw.Application):
                                 application_name='Zodiac',
                                 application_icon='io.github.alexkdeveloper.zodiac',
                                 developer_name='Alex Kryuchkov',
-                                version='1.0.7',
+                                version='1.0.8',
                                 developers=['Alex Kryuchkov'],
                                 translator_credits=translator_credits,
                                 website='https://github.com/alexkdeveloper/zodiac',
